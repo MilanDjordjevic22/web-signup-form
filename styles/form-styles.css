@@ -1,0 +1,121 @@
+/* Basic form styling */
+.signup-form, .additional-info-form {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input, select, and textarea fields */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #33845B;
+    box-shadow: 0 0 5px rgba(51, 132, 91, 0.5);
+}
+
+/* Error message styling */
+.error-message {
+    display: none;
+    color: red;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #0a1912;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    font-size: 1em;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #33845B;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 5%;
+    min-width: 20px;
+    margin-right: 10px;
+}
+
+/* Bank options styling*/
+.bank-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.bank-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bank-option input[type="radio"] {
+    display: none;
+}
+
+.bank-option img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.bank-option:hover {
+    border-color: #33845B;
+}
+
+.bank-option input[type="radio"]:checked + img {
+    box-shadow: 0 0 10px rgba(51, 132, 91, 0.5);
+    border-radius: 5px;
+}
