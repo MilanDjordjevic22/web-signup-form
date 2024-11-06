@@ -36,13 +36,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }));
 });
 
-// Form Submission Validation
 document.getElementById('additionalInfoForm').addEventListener('submit', function(event) {
-    ['dob', 'phone', 'password', 'incomeLevel'].forEach(id => document.getElementById(id).dispatchEvent(new Event('blur')));
-    
-    const errorElements = ['dobError', 'phoneError', 'passwordError', 'incomeError'].some(id => document.getElementById(id)?.textContent);
+    event.preventDefault(); // Prevent form submission initially
+
+    // Trigger validation events for fields
+    ['dob', 'phone', 'password'].forEach(id => {
+        const field = document.getElementById(id);
+        if (field) field.dispatchEvent(new Event('blur'));
+    });
+
+    // Check for any errors
+    const hasErrors = ['dobError', 'phoneError', 'passwordError'].some(id => {
+        return document.getElementById(id)?.textContent;
+    });
+
+    // Bank selection validation
     const selectedBank = document.querySelector('.bank-option input[type="radio"]:checked');
     updateError('bankSelectionError', selectedBank ? "" : "Please select your bank.");
 
-    if (errorElements || !selectedBank) event.preventDefault();
+    // Only proceed if there are no errors and a bank is selected
+    if (!hasErrors && selectedBank) {
+        window.location.href = 'thank-you.html'; // Redirect to the thank-you page
+    }
 });
